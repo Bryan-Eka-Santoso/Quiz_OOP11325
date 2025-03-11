@@ -17,8 +17,8 @@ public class App {
         while(tanaman.size() < 3){
             int dapatTanaman = rand.nextInt(5);
             if(dapatTanaman == 1){
-                Tanaman baru = new Satu();
-                tanaman.add(baru);
+                // Tanaman baru = new Satu();
+                tanaman.add(new Satu());
                 System.out.println("Berhasil Mendapatkan Tanaman Satu");
             } else if (dapatTanaman == 2){
                 Tanaman baru = new Dua();
@@ -56,6 +56,14 @@ public class App {
             } while (menuAwal < 1 || menuAwal > 5);
             
             if(menuAwal == 1){
+                hari++;
+                for(int i = 0; i < tanaman.size(); i++){
+                    tanaman.get(i).umur++;
+
+                    if(tanaman.get(i).umur > tanaman.get(i).maxUmur){
+                        tanaman.remove(i);
+                    }
+                }
                 System.out.println("GOLD : " + gold);
                 System.out.println("BELI TANAMAN");
                 System.out.println("============");
@@ -67,7 +75,7 @@ public class App {
                 
                 System.out.print("Pilihan: ");
                 menuBeli = scanI.nextInt();
-
+                
                 System.out.print("Masukkan Jumlah: ");
                 jumlahBeli = scanI.nextInt();
 
@@ -75,33 +83,42 @@ public class App {
 
                 if(menuBeli > 0){
                     if(menuBeli == 1){
-                        Tanaman baru = new Satu();
-                        tanaman.add(baru);
-                        System.out.println("Berhasil Membeli Tanaman Satu");
-                        gold-= total;
+                        for(int i = 0; i < jumlahBeli; i++){
+                            Tanaman baru = new Satu();
+                            tanaman.add(baru);
+                            gold-= total;
+                        }
+                        System.out.println("Berhasil Membeli Tanaman Satu Sebanyak : " + jumlahBeli);
                     } else if (menuBeli == 2){
-                        Tanaman baru = new Dua();
-                        tanaman.add(baru);
-                        System.out.println("Berhasil Membeli Tanaman Dua");
-                        gold-= total;
+                        for(int i = 0; i < jumlahBeli; i++){
+                            Tanaman baru = new Dua();
+                            tanaman.add(baru);
+                            gold-= total;
+                        }
+                        System.out.println("Berhasil Membeli Tanaman Dua Sebanyak : " + jumlahBeli);
                     } else if (menuBeli == 3){
-                        Tanaman baru = new Tiga();
-                        tanaman.add(baru);
-                        System.out.println("Berhasil Membeli Tanaman Tiga");
-                        gold-= total;
+                        for(int i = 0; i < jumlahBeli; i++){
+                            Tanaman baru = new Tiga();
+                            tanaman.add(baru);
+                            gold-= total;
+                        }
+                        System.out.println("Berhasil Membeli Tanaman Tiga Sebanyak : " + jumlahBeli);
                     } else if (menuBeli == 4){
-                        Tanaman baru = new Empat();
-                        tanaman.add(baru);
-                        System.out.println("Berhasil Membeli Tanaman Empat");
-                        gold-= total;
+                        for(int i = 0; i < jumlahBeli; i++){
+                            Tanaman baru = new Empat();
+                            tanaman.add(baru);
+                            gold-= total;
+                        }
+                        System.out.println("Berhasil Membeli Tanaman Empat Sebanyak : " + jumlahBeli);
                     } else if (menuBeli == 5){
-                        Tanaman baru = new Lima();
-                        tanaman.add(baru);
-                        System.out.println("Berhasil Membeli Tanaman Lima");
-                        gold-= total;
+                        for(int i = 0; i < jumlahBeli; i++){
+                            Tanaman baru = new Lima();
+                            tanaman.add(baru);
+                            gold-= total;
+                        }
+                        System.out.println("Berhasil Membeli Tanaman Lima Sebanyak : " + jumlahBeli);
                     }
                 }
-                hari++;
             } else if(menuAwal == 2){
                 for(int i = 0; i < tanaman.size(); i++){
                     if(tanaman.get(i).siapJual == true){
@@ -144,22 +161,28 @@ public class App {
 
                 int total = hargaPupuk[menuBeliPupuk-1] * jumlahBeliPupuk;
 
-                if(menuBeliPupuk > 0 && gold >= total){
+                if(menuBeliPupuk > 0){
                     if(menuBeliPupuk == 1){
-                        Pupuk baru = new X();
-                        pupuk.add(baru);
-                        System.out.println("Berhasil Membeli Pupuk X");
-                        gold -= total;
+                        for(int i = 0; i < jumlahBeliPupuk; i++){
+                            Pupuk baru = new X();
+                            pupuk.add(baru);
+                            gold-= total;
+                        }
+                        System.out.println("Berhasil Membeli Pupuk X Sebanyak : " + jumlahBeliPupuk);
                     } else if(menuBeliPupuk == 2){
-                        Pupuk baru = new Y();
-                        pupuk.add(baru);
-                        System.out.println("Berhasil Membeli Pupuk Y");
-                        gold -= total;
+                        for(int i = 0; i < jumlahBeliPupuk; i++){
+                            Pupuk baru = new Y();
+                            pupuk.add(baru);
+                            gold-= total;
+                        }
+                        System.out.println("Berhasil Membeli Pupuk Y Sebanyak : " + jumlahBeliPupuk);
                     } else if (menuBeliPupuk == 3){
-                        Pupuk baru = new Z();
-                        pupuk.add(baru);
-                        System.out.println("Berhasil Membeli Pupuk Z");
-                        gold -= total;
+                        for(int i = 0; i < jumlahBeliPupuk; i++){
+                            Pupuk baru = new Z();
+                            pupuk.add(baru);
+                            gold-= total;
+                        }
+                        System.out.println("Berhasil Membeli Pupuk Z Sebanyak : " + jumlahBeliPupuk);
                     }
                 }
                 hari++;
@@ -171,16 +194,16 @@ public class App {
                     }
                 }
             } else if(menuAwal == 4){
+                // hari++;
                 for(int i = 0; i < tanaman.size(); i++){
-                    tanaman.get(i).printInfo();
-                }
-                hari++;
-                for(int i = 0; i < tanaman.size(); i++){
-                    tanaman.get(i).umur++;
-
+                    // tanaman.get(i).umur++;
+                    
                     if(tanaman.get(i).umur > tanaman.get(i).maxUmur){
                         tanaman.remove(i);
                     }
+                }
+                for(int i = 0; i < tanaman.size(); i++){
+                    tanaman.get(i).printInfo();
                 }
             }
         } while (menuAwal != 5 && gold < 50 && gold > 0);
