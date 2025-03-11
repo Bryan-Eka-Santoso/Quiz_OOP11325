@@ -149,17 +149,17 @@ public class App {
                         Pupuk baru = new X();
                         pupuk.add(baru);
                         System.out.println("Berhasil Membeli Pupuk X");
-                        gold -= hargaPupuk[menuBeliPupuk-1];
+                        gold -= total;
                     } else if(menuBeliPupuk == 2){
                         Pupuk baru = new Y();
                         pupuk.add(baru);
                         System.out.println("Berhasil Membeli Pupuk Y");
-                        gold -= hargaPupuk[menuBeliPupuk-1];
+                        gold -= total;
                     } else if (menuBeliPupuk == 3){
                         Pupuk baru = new Z();
                         pupuk.add(baru);
                         System.out.println("Berhasil Membeli Pupuk Z");
-                        gold -= hargaPupuk[menuBeliPupuk-1];
+                        gold -= total;
                     }
                 }
                 hari++;
