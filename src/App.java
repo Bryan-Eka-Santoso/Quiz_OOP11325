@@ -8,7 +8,6 @@ public class App {
         int menuAwal, menuBeli, jumlahBeli, menuBeliPupuk, jumlahBeliPupuk;
         int[] hargaBibit = {1, 2, 3, 4, 5};
         int[] hargaJual = {5, 8, 10, 15, 25};
-        int[] tinggiPanen = {5, 8, 10, 15, 25};
         int[] hargaPupuk = {1, 2, 3};
         ArrayList<Tanaman> tanaman = new ArrayList<>();
         ArrayList<Pupuk> pupuk = new ArrayList<>();
