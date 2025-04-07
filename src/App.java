@@ -56,12 +56,18 @@ public class App {
             
             if(menuAwal == 1){
                 hari++;
+                ArrayList<Tanaman> removeTanaman = new ArrayList<>();
                 for(int i = 0; i < tanaman.size(); i++){
+                    Tanaman t = tanaman.get(i);
                     tanaman.get(i).umur++;
 
                     if(tanaman.get(i).umur > tanaman.get(i).maxUmur){
-                        tanaman.remove(i);
+                        removeTanaman.add(t);
                     }
+                }
+                for(int i = 0; i < removeTanaman.size(); i++){
+                    Tanaman t = removeTanaman.get(i);
+                    tanaman.remove(t);
                 }
                 System.out.println("GOLD : " + gold);
                 System.out.println("BELI TANAMAN");
@@ -137,12 +143,18 @@ public class App {
                     }
                 }
                 hari++;
+                ArrayList<Tanaman> removeTanaman = new ArrayList<>();
                 for(int i = 0; i < tanaman.size(); i++){
+                    Tanaman t = tanaman.get(i);
                     tanaman.get(i).umur++;
 
                     if(tanaman.get(i).umur > tanaman.get(i).maxUmur){
-                        tanaman.remove(i);
+                        removeTanaman.add(t);
                     }
+                }
+                for(int i = 0; i < removeTanaman.size(); i++){
+                    Tanaman t = removeTanaman.get(i);
+                    tanaman.remove(t);
                 }
             } else if(menuAwal == 3){
                 System.out.println("GOLD : " + gold);
@@ -185,21 +197,33 @@ public class App {
                     }
                 }
                 hari++;
+                ArrayList<Tanaman> removeTanaman = new ArrayList<>();
                 for(int i = 0; i < tanaman.size(); i++){
+                    Tanaman t = tanaman.get(i);
                     tanaman.get(i).umur++;
 
                     if(tanaman.get(i).umur > tanaman.get(i).maxUmur){
-                        tanaman.remove(i);
+                        removeTanaman.add(t);
                     }
                 }
+                for(int i = 0; i < removeTanaman.size(); i++){
+                    Tanaman t = removeTanaman.get(i);
+                    tanaman.remove(t);
+                }
             } else if(menuAwal == 4){
-                // hari++;
+                hari++;
+                ArrayList<Tanaman> removeTanaman = new ArrayList<Tanaman>();
                 for(int i = 0; i < tanaman.size(); i++){
-                    // tanaman.get(i).umur++;
+                    Tanaman t = tanaman.get(i);
+                    tanaman.get(i).umur++;
                     
                     if(tanaman.get(i).umur > tanaman.get(i).maxUmur){
-                        tanaman.remove(i);
+                        removeTanaman.add(t);
                     }
+                }
+                for(int i = 0; i < removeTanaman.size(); i++){
+                    Tanaman t = removeTanaman.get(i);
+                    tanaman.remove(t);
                 }
                 for(int i = 0; i < tanaman.size(); i++){
                     tanaman.get(i).printInfo();
